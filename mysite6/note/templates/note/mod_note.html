@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改筆記</title>
+</head>
+<body>
+    <form action="/note/mod/{{ anote.id }}" method="post">
+        <div>
+            <label>主題</label>
+            <input type="text" name="title" value="{{ anote.title }}">
+            <input type="submit" value="修改">
+            <a href="/note/">返回筆記列表</a>
+        </div>
+
+    <div>
+        <textarea name="content"
+                  cols="200"
+                  rows="50">{{ anote.content }}</textarea>
+    </div>
+   </form>
+</body>
+</html>

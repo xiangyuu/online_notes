@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主頁</title>
+</head>
+<body>
+{% if request.session and request.session.user %}
+歡迎: {{request.session.user.username}}
+<a href="user/logout">退出登錄</a>
+{% else %}
+<a href="user/login">登錄</a>
+<a href="user/reg">註冊</a>
+{% endif %}
+{% if request.session and request.session.user %}
+<div>
+    <a href="/note">進入我的筆記</a>
+</div>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登錄</title>
+    <style>
+        div>label{
+        display:inline-block;
+        width:80px;
+        }
+        span{
+        color:red;
+        font-size:12px;
+        }
+        #rem{
+        font-size:12px
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/user/login" method="post">
+        <div>
+            <label>用戶名:</label>
+            <input type="text" name="username" value="{{ username }}">
+            <span>{{ username_error }}</span>
+        </div>
+        <div>
+            <label>密碼:</label>
+            <input type="password" name="password" value="{{ password }}">
+            <span>{{ password_error }}</span>
+        </div>
+        <input type="checkbox" name="remember" value="1" id="id_rem"><label for="id_rem" id="rem">記住用戶名</label>
+        <div>
+            <input type="submit" value="登錄"><span id="log_er">{{login_error}}</span>
+        </div>
+    </form>
+</body>
+</html>
